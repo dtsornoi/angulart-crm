@@ -1,0 +1,30 @@
+form{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+div:last-of-type{
+  margin-bottom: 0;
+}
+
+label{
+  margin-right: 0.5rem;
+}
+
+button{
+  margin-top: 0.5rem;
+  border-radius: 10px;
+}
+
+input{
+  border-radius: 10px;
+  padding: 5px;
+}

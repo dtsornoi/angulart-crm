@@ -1,0 +1,23 @@
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+
+}
+
+label{
+  margin-right: 1rem;
+}
+
+div{
+  margin-bottom: 1rem;
+}
+
+div:first-of-type{
+  margin-top: 2rem;
+}
+
+button{
+  align-self: flex-start;
+}

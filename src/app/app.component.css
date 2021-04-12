@@ -1,0 +1,19 @@
+.nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+a{
+  text-decoration: none;
+  margin-right: 1rem;
+  color: black;
+}
+
+a:last-of-type{
+  margin-right: 0;
+}
+
+a:hover{
+  color: deeppink;
+}
