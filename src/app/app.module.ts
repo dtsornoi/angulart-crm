@@ -4,12 +4,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {EmployeeService} from './service/employee.service';
 import { NewEmployeeComponent } from './new-employee/new-employee.component';
 import {FormsModule} from '@angular/forms';
 import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
 import { NavComponent } from './nav/nav.component';
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
+import {HttpInterceptorService} from './service/http-interceptor.service';
+import {AuthenticationService} from './service/authentication.service';
 
 @NgModule({
   declarations: [
@@ -17,7 +21,9 @@ import { NavComponent } from './nav/nav.component';
     EmployeeListComponent,
     NewEmployeeComponent,
     UpdateEmployeeComponent,
-    NavComponent
+    NavComponent,
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +32,13 @@ import { NavComponent } from './nav/nav.component';
     FormsModule
   ],
   providers: [
-    EmployeeService
+    EmployeeService,
+    AuthenticationService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpInterceptorService,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

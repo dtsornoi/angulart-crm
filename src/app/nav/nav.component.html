@@ -1,6 +1,10 @@
 <div>
   <div class="nav">
-    <a routerLink="">Emps</a>
-    <a routerLink="/newEmployee">Add new Employee</a>
+    <a *ngIf="isLoggedIn" routerLink="/new-employee">Add new Employee</a>
+    <a *ngIf="isLoggedIn" routerLink="/employee-list">Employee list</a>
+  </div>
+  <div>
+    <a *ngIf="!isLoggedIn" routerLink="/login">Login</a>
+    <a *ngIf="isLoggedIn" routerLink="/logout" (click)="handleLogOut()">Logout</a>
   </div>
 </div>

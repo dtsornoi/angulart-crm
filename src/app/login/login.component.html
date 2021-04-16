@@ -1,0 +1,8 @@
+<form action="post" ngForm="loginForm">
+  <div *ngIf="invalidLogin">
+    <p>{{errorMessage}}</p>
+  </div>
+  <input type="text" id="username" [(ngModel)]="username">
+  <input type="text" id="password" [(ngModel)]="password">
+  <input type="submit" (click)="handleLogin()">
+</form>
